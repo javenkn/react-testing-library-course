@@ -27,10 +27,13 @@ function Bomb({shouldThrow}) {
 
 test('calls reportError and renders that there was a problem', () => {
   mockReportError.mockResolvedValueOnce({success: true})
-  const {rerender, getByText, queryByText, getByRole, queryByRole} = render(
-    <Bomb />,
-    {wrapper: ErrorBoundary},
-  )
+  const {
+    rerender,
+    getByText,
+    queryByText,
+    getByRole,
+    queryByRole,
+  } = render(<Bomb />, {wrapper: ErrorBoundary})
 
   rerender(<Bomb shouldThrow={true} />)
 
